@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>XL婚礼抽奖</title>
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!--<link href="../js/selectordie.css" rel="stylesheet">-->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="../js/selectordie.min.js"></script>-->
+</head>
+<style type="text/css">
+    body{margin: 0;padding: 0;}
+    button {
+        width: 200px;
+        padding:8px;
+        background-color: red;
+        color: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid white;
+        font-weight: 900;
+        font-size:125%
+    }
+    #presentImg { margin: 30px auto; display: block; -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5); -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5); -o-box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5); box-shadow: 0 2px 10px rgba(0, 0, 0, .5), 0 2px 3px rgba(0, 0, 0, .5); position: relative; }
+    #presentImg:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))); background: -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)); background: linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)); }
+</style>
+<body background="../img/background.jpg">
+<div style="height: 100%; width: 100%; text-align: center;">
+    <div style="height: 250px">
+        <div id="headNull" style="height: 100px"></div>
+        <div id="content" style="height: 100px; text-align: center; padding-right: 750px;">
+            <!--显示中奖内容-->
+        </div>
+    </div>
+    <div style = "padding-left: 400px; padding-right: 1000px; height: 700px">
+        <form id="presentForm" class="form-inline" style="font-size: 36px; text-align: left;">
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <td><h1><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;奖品</b></h1></td>
+                    <td><h1><b>数量</b></h1></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radio">
+                            <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="presentId" value="1"/>&nbsp;特等奖<!--iphone X-->
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label>
+                            <select id="select1">
+                                <option value="1">1　　</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radio">
+                            <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="presentId" value="2"/>&nbsp;一等奖
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label>
+                            <select id="select2">
+                                <option value="1">1　　</option>
+                                <option value="2">2　　</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radio">
+                            <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="presentId" value="3"/>&nbsp;二等奖
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label>
+                            <select id="select3">
+                                <option value="1">1　　</option>
+                                <option value="2">2　　</option>
+                                <option value="3">3　　</option>
+                                <option value="4">4　　</option>
+                                <option value="5">5　　</option>
+                                <option value="6">6　　</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radio">
+                            <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="presentId" value="4"/>&nbsp;三等奖
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <label>
+                            <select id="select4">
+                                <option value="1">1　　</option>
+                                <option value="2">2　　</option>
+                                <option value="3">3　　</option>
+                                <option value="4">4　　</option>
+                                <option value="5">5　　</option>
+                                <option value="6">6　　</option>
+                                <option value="7">7　　</option>
+                                <option value="8">8　　</option>
+                                <option value="9">9　　</option>
+                                <option value="10">10　</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br/>
+        <button id = "b1">开始抽奖</button>
+    </div>
+    <div style='height: auto; width: auto; text-align: right; padding-right: 80px'>
+        <button id = 'b3' style='margin-right: 940px'>开奖</button>
+        <button id = 'b2'>继续抽奖</button>
+    </div>
+</div>
+</body>
+<script>
+    jQuery(function($){
+        console.log("进入方法");
+        $("#b2").hide();
+        $("#b3").hide();
+        function getFontSize(num) {
+            var fontSize;
+            if (num <= 2) {
+                fontSize = 120;
+            } else if (num <= 4) {
+                fontSize = 80;
+            } else  {
+                fontSize = 60;
+            }
+            return fontSize;
+        }
+        var interval;
+        $("#b1").click(function() {
+            $("#headNull").html(" ");
+            var presentId = $("input[name='presentId']:checked").val();
+            var num;
+            var img;
+            if (presentId) {
+                if (presentId == 1) {
+                    num = $("#select1").val();
+                    img = "<img id='presentImg' src='../img/iphonex.jpg'/>";
+                } else if (presentId == 2) {
+                    num = $("#select2").val();
+                    img = "<img id='presentImg' src='../img/ddc.jpg'/>";
+                } else if (presentId == 3) {
+                    num = $("#select3").val();
+                    img = "<img id='presentImg' src='../img/meidi.jpg'/>";
+                } else if (presentId == 4) {
+                    num = $("#select4").val();
+                    img = "<img id='presentImg' src='../img/xiaoxiong.jpg'/>";
+                } else {
+                    return;
+                }
+            } else {
+                $("#headNull").html("<div class='alert alert-info alert-dismissible' role='alert'><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><span style='font-size: 20px'>请选择奖品</span></div>");
+                return;
+            }
+            var fontSize = getFontSize(num);
+            //$("#content").html("<span style='font-size: 20px'>抽奖号码为: <br/><span style='font-size: " + fontSize + "px; color: red'>" + generateRandomNum(num) + "</span><br/>的幸运儿即将抽中:<br/></span>" + img);
+            $("#b1").hide();
+            $("#b2").show();
+            $("#b3").show();
+            $("#presentForm").hide();
+            $("#b2").click(function () {
+                console.log("返回抽奖界面");
+                window.location.reload();
+                /*$("#content").html("");
+                $("#headNull").html("");
+                $("#b1").show();
+                $("#b2").hide();
+                $("#b3").hide();
+                $("#presentForm").show();
+                $("input[name='presentId']:checked").removeAttr('checked');
+                clearInterval(interval);*/
+            });
+            $("#b3").click(function () {
+                console.log("开奖逻辑");
+                requestNum();
+            });
+
+            function changeNum() {
+                var arr = generateRandomNum(num);
+                $("#content").html("<span style='font-size: 24px'>抽奖号码为: <br/><span style='font-size: " + fontSize + "px; color: red'>" + arr + "</span><br/>的幸运儿即将抽中:<br/></span>" + img);
+            }
+
+            interval = setInterval(changeNum, 50);
+        });
+
+        function generateRandomNum(num){
+            var basicNum = 5209000;
+            var numberOfPeople = 600;// 模拟人数
+            var arr = "";
+            for (var i = 0; i < num; i++) {
+                arr = arr + " " + (basicNum + Math.floor(Math.random() * numberOfPeople));
+            }
+            console.log(arr);
+            return arr;
+        }
+
+        function requestNum(){
+            var presentId = $("input[name='presentId']:checked").val();
+            var num;
+            var img;
+            if (presentId) {
+                if (presentId == 1) {
+                    num = $("#select1").val();
+                    img = "<img id='presentImg' src='../img/iphonex.jpg'/>";
+                } else if (presentId == 2) {
+                    num = $("#select2").val();
+                    img = "<img id='presentImg' src='../img/ddc.jpg'/>";
+                } else if (presentId == 3) {
+                    num = $("#select3").val();
+                    img = "<img id='presentImg' src='../img/meidi.jpg'/>";
+                } else if (presentId == 4) {
+                    num = $("#select4").val();
+                    img = "<img id='presentImg' src='../img/xiaoxiong.jpg'/>";
+                } else {
+                    return;
+                }
+            } else {
+                $("#headNull").html("<div class='alert alert-info alert-dismissible' role='alert'><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><span style='font-size: 20px'>请选择奖品</span></div>");
+                return;
+            }
+            var fontSize = getFontSize(num);
+            $.ajax({
+                type: "GET",
+                url: "/begin",
+                data: "presentId="+ presentId+"&num=" + num,
+                dataType: "json",
+                success: function(msg){
+                    if (msg.code == 0) {
+                        console.log(msg.data);
+                        clearInterval(interval);
+                        $("#b3").hide();
+                        var data = "";
+                        for (var i = 0; i< msg.data.length; i++) {
+                            data = data + msg.data[i] + "   ";
+                        }
+                        $("#content").html("<span style='font-size: 24px'>恭喜号码为: <br/><span style='font-size: " + fontSize + "px; color: red'>" + data + "</span><br/>的幸运儿中奖:<br/></span>" + img);
+                    } else {
+                        $("#content").html("<span style='font-size: 24px'>恭喜号码为: <br/><span style='font-size: " + fontSize + "px; color: red'>" + "　　" + "</span><br/>的幸运儿中奖:<br/></span>" + img);
+                        $("#headNull").html("<div class='alert alert-info alert-dismissible' role='alert'><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><span style='font-size: 20px'>" + msg.msg + "</span></div>");
+                    }
+                },
+                error:function(){
+                    console.log("错误");
+                }
+            });
+        }
+    });
+</script>
+</html>
